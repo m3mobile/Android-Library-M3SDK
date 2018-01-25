@@ -234,6 +234,9 @@ public class KeyRemap {
 					baseDir = new File("/sys/devices/gpio_keys.57");
 
 				}
+				if(Build.MODEL.contains("M3SM15")) {
+					baseDir = new File("/sys/devices/soc/soc:gpio_keys");
+				}
 				/* lock key */
 				out = new BufferedWriter(new FileWriter(baseDir + File.separator
 						+ "locked_key"));
@@ -313,10 +316,13 @@ public class KeyRemap {
 			try {
 				if(isSM10LTE()){
 					mapfile = new File("/sys/devices/soc.0/gpio_keys.66/map");
-					
+
 				}else{
 
 					mapfile = new File("/sys/devices/gpio_keys.57/map");
+				}
+				if(Build.MODEL.contains("M3SM15")) {
+					mapfile = new File("/sys/devices/soc/soc:gpio_keys/map");
 				}
 
 				input = new FileReader(mapfile);
@@ -513,7 +519,8 @@ public class KeyRemap {
 	}
 	public class KeyAction extends keySet{
 		private final static int CODE = 8;
-		private final static int DEFAULT = KEY_SCAN;
+		//private final static int DEFAULT = KEY_SCAN;
+		private final int DEFAULT = KeyRemap.getScanKeyCode();
 
 		public int getDefaultKey(){
 			return DEFAULT;

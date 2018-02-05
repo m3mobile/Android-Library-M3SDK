@@ -274,7 +274,7 @@ public class KeyRemap {
 		protected int getKey(long key_idx){
 			
 			//if(_MainContext != null){
-			if(false){
+			if(true){
 				int nReturnCode = -1;
 				getKeyIntent((int)key_idx);
 				return nReturnCode;
@@ -310,9 +310,9 @@ public class KeyRemap {
 			String line = null;
 			int ret = 0;
 
-			/*
-			 * root@msm8610:/ # cat /sys/devices/gpio_keys.57/map 2 212 0 0
-			 */
+
+			 // root@msm8610:/ # cat /sys/devices/gpio_keys.57/map 2 212 0 0
+
 			try {
 				if(isSM10LTE()){
 					mapfile = new File("/sys/devices/soc.0/gpio_keys.66/map");

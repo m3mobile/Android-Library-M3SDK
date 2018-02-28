@@ -180,7 +180,7 @@ public class KeyRemap {
 		
 		protected boolean setKey(int curKeycode, int setKeycode){
 			
-			if(_MainContext != null){
+			if(_MainContext != null && isSM10LTE()){
 				setKeyIntent(curKeycode, setKeycode);
 				
 				return true;
@@ -274,7 +274,7 @@ public class KeyRemap {
 		protected int getKey(long key_idx){
 			
 			//if(_MainContext != null){
-			if(true){
+			if(isSM10LTE()){
 				int nReturnCode = -1;
 				getKeyIntent((int)key_idx);
 				return nReturnCode;

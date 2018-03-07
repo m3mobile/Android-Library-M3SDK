@@ -63,15 +63,19 @@ public class BarcodeManager {
 	protected void sendBarcode(String barcode, String codeType, String module){
 		this.barcode=barcode;
 		
-		if(module.equals("Zebra_2D")){
+		/*if(module.equals("Zebra_2D")){
 			
 	        notifyListeners(barcode, codeType);	
 		}else if(module.equals("Zebra_1D")){
 	        notifyListeners(barcode, codeType);	
 		}else{
 	        notifyListeners(barcode);	
-		}
-			
+		}*/
+
+		if(codeType.isEmpty())
+			notifyListeners(barcode);
+		else
+			notifyListeners(barcode, codeType);
 		
 		if (listeners == null)
             return;

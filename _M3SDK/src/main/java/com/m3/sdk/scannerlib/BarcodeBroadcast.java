@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+@Deprecated
 public class BarcodeBroadcast extends BroadcastReceiver {
 
 	private String barcode;
@@ -25,9 +26,9 @@ public class BarcodeBroadcast extends BroadcastReceiver {
 		if (intent.getAction().equals(
 				"com.android.server.scannerservice.broadcast")) {
 			
-			barcode = intent.getExtras().getString(Barcode.SCANNER_BARCODE_DATA);
-			type = intent.getExtras().getString(Barcode.SCANNER_BARCODE_CODE_TYPE);
-			module = intent.getExtras().getString(Barcode.SCANNER_MODULE_TYPE); 
+			barcode = intent.getExtras().getString(Barcode_old.SCANNER_BARCODE_DATA);
+			type = intent.getExtras().getString(Barcode_old.SCANNER_BARCODE_CODE_TYPE);
+			module = intent.getExtras().getString(Barcode_old.SCANNER_MODULE_TYPE);
 			
 			if(barcode != null)
 			{

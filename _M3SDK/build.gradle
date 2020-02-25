@@ -36,7 +36,7 @@ task deleteJar(type: Delete) {
 }
 
 task createJar(type: Copy) {
-    from('build/intermediates/bundles/default/')
+    from('build/intermediates/packaged-classes/release')
     into('libs/jars/')
     include('classes.jar')
     rename('classes.jar', 'M3SDK.jar')

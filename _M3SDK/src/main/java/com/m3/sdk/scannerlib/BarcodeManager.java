@@ -9,7 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 
-@Deprecated
 public class BarcodeManager {
 	
 	private Context mContext;
@@ -24,7 +23,7 @@ public class BarcodeManager {
 		
 		IntentFilter filter = new IntentFilter();
 		
-		filter.addAction(Barcode_old.SCN_CUST_ACTION_SCODE);
+		filter.addAction(Barcode.SCN_CUST_ACTION_SCODE);
 		
 		mContext.registerReceiver(bb,filter);				
 	}
@@ -118,13 +117,13 @@ public class BarcodeManager {
     }
 
 	public void scanStart() {
-		Intent intent = new Intent(Barcode_old.SCN_CUST_ACTION_START, null);
+		Intent intent = new Intent(Barcode.SCN_CUST_ACTION_START, null);
 		mContext.sendOrderedBroadcast(intent, null);
 	}
 
 
 	public void scanDispose() {
-		Intent intent = new Intent(Barcode_old.SCN_CUST_ACTION_CANCEL, null);
+		Intent intent = new Intent(Barcode.SCN_CUST_ACTION_CANCEL, null);
 		mContext.sendOrderedBroadcast(intent, null);
 	}
 }

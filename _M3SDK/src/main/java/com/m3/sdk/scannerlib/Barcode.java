@@ -1,138 +1,81 @@
 /*
  * v.1.2.0	2016-09-09	���翵		SM10 LTE ������ Key �� Scanner �� �и���
- * v.1.3.0	2020-02-11	전재영		Scanner Control 을 AIDL 로하도록 기능 추가
  */
 package com.m3.sdk.scannerlib;
 
+import java.sql.Struct;
+import java.util.Map;
+
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.provider.Settings;
 import android.util.Log;
 
-import com.m3.sdk.scanner.ScannerFunctions;
-import com.m3.sdk.scanner.ScannerFunctions_2D;
-import com.m3.sdk.scannerlib.DataType;
-
 public class Barcode {
-	private static String TAG = "Barcode-scan";
+
+
+	public static final String SCN_CUST_ACTION_SWITCH = "com.android.server.scannerservice.m3onoff";
+	public static final String SCN_CUST_EX_SWITCH = "scanneronoff";
+	public static final String SCN_CUST_ACTION_ICON_STATE = "android.intent.action.ACTION_SCANNER_ENABLE";
+	public static final String SCN_CUST_ACTION_START = "android.intent.action.M3SCANNER_BUTTON_DOWN";
+	public static final String SCN_CUST_ACTION_CANCEL = "android.intent.action.M3SCANNER_BUTTON_UP";
+
+	public static final String SCANNER_BARCODE_DATA = "m3scannerdata";
+	public static final String SCANNER_BARCODE_CODE_TYPE = "m3scanner_code_type";
+	public static final String SCANNER_MODULE_TYPE = "m3scanner_module_type";
+
+	public static final String SCN_CUST_ACTION_SETTING_CHANGE = "com.android.server.scannerservice.settingchange";
+
+	public static final String SCN_CUST_ACTION_PARAM = "android.intent.action.SCANNER_PARAMETER";
+	public static final String SCN_CUST_ACTION_SCODE = "com.android.server.scannerservice.broadcast";
+
+	private static String TAG = "Barcode";
+	
 	private Context mContext;
 	private Symbology mSymbology;
-	private ScannerFunctions _function;
-
-	@Deprecated
-	public Barcode(Context context) {
-		this.mContext = context;
+	
+	public Barcode(Context mContext) {
+		this.mContext = mContext;
 		mSymbology = new Symbology(mContext);
-		_function = new ScannerFunctions_2D(context);
 	}
-
-	public Barcode(Context context, DataType.SCANNER_MODULE module){
-		this.mContext = context;
-		mSymbology = new Symbology(mContext);
-
-		switch(module){
-			case SE4710:
-			case SE4750:
-			case SE4850:
-			default:
-				_function = new ScannerFunctions_2D(context);
-				break;
-		}
-	}
-
-	public void dispose(){
-		_function.dispose();
-	}
-
-	@Deprecated
+	
 	public Symbology getSymbologyInstance(){
 		return mSymbology;
 	}
 
 	public void scanStart() {
-		_function.decodeStart();
+		Intent intent = new Intent(SCN_CUST_ACTION_START,
+				null);
+		mContext.sendOrderedBroadcast(intent, null);
 	}
 
 	public void scanDispose() {
-		_function.decodeStop();
+		Intent intent = new Intent(SCN_CUST_ACTION_CANCEL,
+				null);   
+		mContext.sendOrderedBroadcast(intent, null);
 	}
 	private boolean isScannerEnable() {
-		return _function.isEnable();
-	}
-
-	public boolean isEnable() {
-		return _function.isEnable();
+		int enable = Settings.System.getInt(mContext.getContentResolver(),
+				"M3SCANNER_POWER_ON", 1);
+		if (enable == 1)
+			return true;
+		else
+			return false;
 	}
 
 	public void setScanner(boolean enable) {
-		_function.setScanner(enable);
+		int onOff = 0;
+		if (enable)
+			onOff = 1;
+		Intent intentSwitch = new Intent(SCN_CUST_ACTION_SWITCH,
+				null);   
+		intentSwitch.putExtra(SCN_CUST_EX_SWITCH, onOff);
+		
+		mContext.sendOrderedBroadcast(intentSwitch, null);
+				
 	}
-
-	public void addBarcodeListener(BarcodeListener2 bl){
-		_function.addListener(bl);
-	}
-
-	public void removeBarcodeListener(BarcodeListener2 bl){
-		_function.removeListener(bl);
-	}
-
-	public void setEndCharMode(DataType.END_CHAR mode){
-		_function.setEndCharMode(mode.ordinal());
-	}
-
-	public void setOutputMode(DataType.OUTPUT_MODE mode){
-		_function.setOutputMode(mode.ordinal());
-	}
-
-	public void setPrefix(String prefix){
-		_function.setPrefix(prefix);
-	}
-
-	public void setPostfix(String postfix){
-		_function.setPostfix(postfix);
-	}
-
-	public void setSoundMode(DataType.SOUND_MODE mode){
-		_function.setSoundMode(mode.ordinal());
-	}
-
-	public void setVibration(boolean isOn){
-		_function.setVibration(isOn);
-	}
-
-	public void setReadMode(DataType.READ_MODE mode){
-		_function.setReadMode(mode.ordinal());
-	}
-
-	// 0: Enable, 1: all Disable (Function Call and Trigger Key), 2: Key Disable
-	public void setScannerTriggerMode(DataType.SCAN_TRIGGER mode){
-		_function.setScannerTriggerMode(mode.ordinal());
-	}
-
-	public int setScanParameter(int num, int val){
-		return _function.setScanParameter(num, val);
-	}
-
-	public int getScanParameter(int num){
-		return _function.getScanParameter(num);
-	}
-
-	public void enableAllCodeType(){
-		mContext.sendOrderedBroadcast(
-				new Intent(Barcode_old.SCN_CUST_ACTION_SETTING_CHANGE)
-						.putExtra("setting", "enable_all_types")
-				, null
-		);
-	}
-
-	public void disableAllCodeType(){
-		mContext.sendOrderedBroadcast(
-				new Intent(Barcode_old.SCN_CUST_ACTION_SETTING_CHANGE)
-					.putExtra("setting", "disable_all_types")
-				, null
-		);
-	}
-
-	@Deprecated
+	
 	protected void setBarcodeAll(byte[] params) {
 		Intent intent = new Intent(
 				"com.android.server.scannerservice.setallparameter");
@@ -141,7 +84,6 @@ public class Barcode {
 		mContext.sendBroadcast(intent);
 	}
 
-	@Deprecated
 	protected void setBarcodeOpenAll() {
 		Intent intent = new Intent(
 				"com.android.server.scannerservice.setallparameter");
@@ -151,7 +93,6 @@ public class Barcode {
 		mContext.sendBroadcast(intent);
 	}
 
-	@Deprecated
 	protected void setBarcodeCloseAll() {
 		Intent intent = new Intent(
 				"com.android.server.scannerservice.setallparameter");
@@ -161,10 +102,8 @@ public class Barcode {
 		mContext.sendBroadcast(intent);
 	}
 
-	@Deprecated
+	
 	public static class Symbology{
-
-		public static final String SCN_CUST_ACTION_PARAM = "android.intent.action.SCANNER_PARAMETER";
 		
 		public static class UPC_A{
 			public static final int nCode = 1;
@@ -237,6 +176,8 @@ public class Barcode {
 			public static final int nCode = 340;
 			public static int nValue = 0;					
 		}
+		
+
 		private int [] symbol = {
 				UPC_A.nCode, UPC_E.nCode, UPC_E1.nCode, EAN_8.nCode,
 				EAN_13.nCode, CODABAR.nCode, CODE_39.nCode, CODE_128.nCode, CODE_93.nCode,
@@ -245,13 +186,9 @@ public class Barcode {
 				};
 
 		private Context mContext = null;
-		private ScannerFunctions _functions = null;
 		
 		protected Symbology(Context context) {
 			mContext = context;			
-		}
-		protected Symbology(ScannerFunctions functions){
-			_functions = functions;
 		}
 		
 		public boolean setSymbology(int symbology, int paramVal) {
@@ -266,35 +203,31 @@ public class Barcode {
 			}
 			
 			setCodeType(symbology, paramVal);
-
-			if(_functions != null){
-				ret = (_functions.setScanParameter(symbology, paramVal) != -1);
-			}else if(mContext != null){
-				Intent intent = new Intent(SCN_CUST_ACTION_PARAM);
-				intent.putExtra("symbology", symbology);
-				intent.putExtra("value", paramVal);
-				mContext.sendOrderedBroadcast(intent, null);
-			}
-
+			
+			Intent intent = new Intent(SCN_CUST_ACTION_PARAM);
+			intent.putExtra("symbology", symbology);
+			intent.putExtra("value", paramVal);
+			
 			Log.i(TAG,"setSymbology ["+ symbology + "][" + paramVal + "]");	
-
+			
+			mContext.sendOrderedBroadcast(intent, null);
+			
 			return ret;
 		}
 
 		public int getSymbology(int symbology)
-		{
-			int nValue = 0;
-			nValue = getCodeType(symbology);
-			Log.i(TAG,"getSymbology ["+ symbology + "][" + nValue + "]");
+		{					
 
-			if(_functions != null){
-				nValue = _functions.getScanParameter(symbology);
-			}else if(mContext != null){
-				Intent intent = new Intent(SCN_CUST_ACTION_PARAM);
-				intent.putExtra("symbology", symbology);
-				intent.putExtra("value", -1);
-				mContext.sendOrderedBroadcast(intent, null);
-			}
+			int nValue = 0;
+			
+			nValue = getCodeType(symbology);
+			
+			Log.i(TAG,"getSymbology ["+ symbology + "][" + nValue + "]");	
+			
+			Intent intent = new Intent(SCN_CUST_ACTION_PARAM);
+			intent.putExtra("symbology", symbology);
+			intent.putExtra("value", -1);
+			mContext.sendOrderedBroadcast(intent, null);
 						
 			return nValue;
 		}

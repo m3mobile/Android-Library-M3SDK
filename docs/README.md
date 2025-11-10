@@ -39,6 +39,10 @@ These are the SDK documents related to device startup and system settings.
     *   [Korean](./startup/timezone/timezone-setting-sdk-ko.md)
     *   [English](./startup/timezone/timezone-setting-sdk-en.md)
 
+*   **Volume Setting SDK**: Guides on how to control device volume settings.
+    *   [Korean](./startup/volume/volume-settings-sdk-ko.md)
+    *   [English](./startup/volume/volume-settings-sdk-en.md)
+
 ## WiFi Preference SDK
 
 These are the SDK documents related to WiFi configuration and control.

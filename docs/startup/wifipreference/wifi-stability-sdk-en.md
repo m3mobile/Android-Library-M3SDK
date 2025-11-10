@@ -2,9 +2,8 @@
 
 Sets the stability level of the Wi-Fi connection. Controls the reconnection policy based on signal strength changes.
 
-> [!WARNING]
-> **Not compatible with Android 13 and higher**
-> 
+> **Note** <br>
+> **Not compatible with Android 13 and higher** <br>
 > Due to internal Wi-Fi policy changes starting from Android 13 (API 33), the stability settings via this SDK are no longer effective.
 
 ## Broadcast Actions

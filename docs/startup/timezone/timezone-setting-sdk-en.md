@@ -1,6 +1,7 @@
 # Timezone Control SDK
 
-> **Note** This feature is supported from StartUp version 6.5.9 and above.
+> **Note** <br>
+> This feature is supported from StartUp version 6.5.9 and above.
 
 ## Overview
 

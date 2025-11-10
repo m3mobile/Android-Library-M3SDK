@@ -2,9 +2,8 @@
 
 Controls the detection of captive portals (authentication pages) on public Wi-Fi networks.
 
-> [!WARNING]
-> Supported from StartUp version 6.0.6 BETA.
->
+> **Note** <br>
+> Supported from StartUp version 6.0.6 BETA. <br>
 > [Available on Android 11 and later](https://developer.android.com/about/versions/11/features/captive-portal),
 > and is not supported on SL20 devices.
 

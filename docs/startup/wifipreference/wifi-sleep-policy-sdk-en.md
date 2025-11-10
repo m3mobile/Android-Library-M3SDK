@@ -1,6 +1,6 @@
 # Wi-Fi Sleep Policy SDK
 
-> [!WARNING]
+> **Note** <br>
 > Supported from StartUp version 6.0.6 BETA.
 
 Controls the Wi-Fi behavior when the screen is off (standby mode).

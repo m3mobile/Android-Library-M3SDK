@@ -1,8 +1,7 @@
 # Wi-Fi 주파수 대역 설정 SDK
 
-> [!WARNING]
-> StartUp 버전 6.0.6 BETA 버전부터 지원합니다.
->
+> **Note** <br>
+> StartUp 버전 6.0.6 BETA 버전부터 지원합니다. <br>
 > SM15, SL10, SL10K 기기는 지원하지 않습니다.
 
 ## 개요

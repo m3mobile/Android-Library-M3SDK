@@ -1,6 +1,7 @@
 # FN Key Control SDK
 
->**참고:** 이 기능은 KeyTool V1.2.6 이상이면서 SL20K 기기에서 사용할 수 있습니다.
+> **참고:** <br>
+> 이 기능은 KeyTool V1.2.6 이상이면서 SL20K 기기에서 사용할 수 있습니다.
 
 ## Overview
 

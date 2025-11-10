@@ -1,6 +1,6 @@
 # Wi-Fi Open Network Notification SDK
 
-> [!WARNING]
+> **Note** <br>
 > StartUp 버전 6.0.6 BETA 버전부터 지원합니다.
 
 보안이 없는 Wi-Fi 네트워크 감지 알림 기능을 제어합니다.

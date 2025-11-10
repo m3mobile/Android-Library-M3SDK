@@ -1,6 +1,6 @@
 # Wi-Fi Sleep Policy SDK
 
-> [!WARNING]
+> **Note** <br>
 > StartUp 버전 6.0.6 BETA 버전부터 지원합니다.
 
 화면이 꺼진 상태(대기 모드)에서 Wi-Fi 동작 방식을 제어합니다.

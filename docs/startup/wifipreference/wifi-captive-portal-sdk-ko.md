@@ -2,9 +2,8 @@
 
 공공 Wi-Fi의 캡티브 포털(인증 페이지) 감지 기능을 제어합니다.
 
-> [!WARNING]
-> StartUp 버전 6.0.6 BETA 버전부터 지원합니다.
->
+> **Note** <br>
+> StartUp 버전 6.0.6 BETA 버전부터 지원합니다. <br>
 > [안드로이드 11 부터 지원](https://developer.android.com/about/versions/11/features/captive-portal?hl=ko)하며,
 > SL20 기기는 지원하지 않습니다.
 

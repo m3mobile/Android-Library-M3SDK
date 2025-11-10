@@ -1,6 +1,7 @@
 # Wakeup Control SDK (Deprecated)
 
->**Note:** This feature is available in KeyTool V1.2.5 or higher and only on SL20P.
+> **Note:** <br>
+> This feature is available in KeyTool V1.2.5 or higher and only on SL20P.
 
 ## Overview
 

@@ -1,6 +1,7 @@
 # NTP Server Settings Control SDK
 
-> **Note** This feature is supported from StartUp version 6.4.9 and above.
+> **Note** <br>
+> This feature is supported from StartUp version 6.4.9 and above.
 
 ## Overview
 

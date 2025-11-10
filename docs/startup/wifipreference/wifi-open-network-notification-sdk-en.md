@@ -1,6 +1,6 @@
 # Wi-Fi Open Network Notification SDK
 
-> [!WARNING]
+> **Note** <br>
 > Supported from StartUp version 6.0.6 BETA.
 
 Controls the notification feature for detecting unsecured Wi-Fi networks.

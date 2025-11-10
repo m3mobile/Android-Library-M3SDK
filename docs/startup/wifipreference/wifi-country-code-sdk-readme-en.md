@@ -1,8 +1,8 @@
 # Wi-Fi Country Code SDK
 
-> Supported from StartUp version 6.0.6 BETA.
->
-> SM15, SL10, and SL10K devices are not supported.
+> **Note** <br>
+> Supported from StartUp version 6.0.6 BETA. <br>
+> SL10 and SL10K devices are not supported.
 
 ## Overview
 
@@ -11,11 +11,6 @@ This SDK allows external Android applications to set the device's Wi-Fi country 
 The Wi-Fi country code is a critical setting that ensures the device complies with the wireless regulations of the region where it is operating. Each country has different rules regarding permissible Wi-Fi channels and transmission power, making the correct country code essential.
 
 ### Quick Start
-
-> [!WARNING]
-> Supported from StartUp version 6.0.6 BETA.
-> 
-> SL10 and SL10K devices are not supported.
 
 #### Basic Usage
 

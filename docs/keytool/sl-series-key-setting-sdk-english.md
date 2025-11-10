@@ -1,7 +1,8 @@
 
 # Key Setting SDK
 
->**Note:** This feature is available in KeyTool V1.2.6 or higher and only on SL20, SL20P, and SL20K.
+> **Note:** <br>
+> This feature is available in KeyTool V1.2.6 or higher and only on SL20, SL20P, and SL20K.
 
 ## Overview
 

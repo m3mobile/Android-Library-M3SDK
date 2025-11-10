@@ -1,8 +1,7 @@
 # Wi-Fi Channel Configuration SDK
 
-> [!WARNING]
-> Supported from StartUp version 6.0.6 BETA.
-> 
+> **Note** <br>
+> Supported from StartUp version 6.0.6 BETA. <br>
 > Not supported on SM15, SL10, SL10K devices.
 
 ## Overview

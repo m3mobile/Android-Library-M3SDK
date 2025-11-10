@@ -1,8 +1,7 @@
 # Wi-Fi Frequency Band Setting SDK
 
-> [!WARNING]
-> Supported from StartUp version 6.0.6 BETA.
->
+> **Note** <br>
+> Supported from StartUp version 6.0.6 BETA. <br>
 > SL10 and SL10K devices are not supported.
 
 ## Overview

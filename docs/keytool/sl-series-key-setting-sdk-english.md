@@ -121,7 +121,7 @@ The available keys and assignable functions vary depending on the device model.
 - **Special Characters**: `"."`, `"★"`
 
 #### Assignable Functions
-- Supports all functions available on SL20P.
+- [Supports all functions available on SL20P](#assignable-functions-1).
 
 ### WD10
 

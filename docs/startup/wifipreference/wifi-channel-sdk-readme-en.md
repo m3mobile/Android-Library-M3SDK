@@ -68,22 +68,22 @@ This setting limits Wi-Fi scanning and connections to a specific list of channel
 
 #### 2.4 GHz Channels (Channels 1 - 14)
 
-| Channel | Center Frequency | Region         | Notes                             |
-|---------|------------------|----------------|-----------------------------------|
-| 1       | 2412 MHz         | Worldwide      | Non-overlapping channel (Recommended) |
-| 2       | 2417 MHz         | Worldwide      |                                   |
-| 3       | 2422 MHz         | Worldwide      |                                   |
-| 4       | 2427 MHz         | Worldwide      |                                   |
-| 5       | 2432 MHz         | Worldwide      |                                   |
-| 6       | 2437 MHz         | Worldwide      | Non-overlapping channel (Recommended) |
-| 7       | 2442 MHz         | Worldwide      |                                   |
-| 8       | 2447 MHz         | Worldwide      |                                   |
-| 9       | 2452 MHz         | Worldwide      |                                   |
-| 10      | 2457 MHz         | Worldwide      |                                   |
-| 11      | 2462 MHz         | Worldwide      | Non-overlapping channel (Recommended) |
-| 12      | 2467 MHz         | Europe, Asia   |                                   |
-| 13      | 2472 MHz         | Europe, Asia   |                                   |
-| 14      | 2484 MHz         | Japan only     | Special channel (802.11b only)    |
+| Channel | Center Frequency | Region       | Notes                                 |
+|---------|------------------|--------------|---------------------------------------|
+| 1       | 2412 MHz         | Worldwide    | Non-overlapping channel (Recommended) |
+| 2       | 2417 MHz         | Worldwide    |                                       |
+| 3       | 2422 MHz         | Worldwide    |                                       |
+| 4       | 2427 MHz         | Worldwide    |                                       |
+| 5       | 2432 MHz         | Worldwide    |                                       |
+| 6       | 2437 MHz         | Worldwide    | Non-overlapping channel (Recommended) |
+| 7       | 2442 MHz         | Worldwide    |                                       |
+| 8       | 2447 MHz         | Worldwide    |                                       |
+| 9       | 2452 MHz         | Worldwide    |                                       |
+| 10      | 2457 MHz         | Worldwide    |                                       |
+| 11      | 2462 MHz         | Worldwide    | Non-overlapping channel (Recommended) |
+| 12      | 2467 MHz         | Europe, Asia |                                       |
+| 13      | 2472 MHz         | Europe, Asia |                                       |
+| 14      | 2484 MHz         | Japan only   | Special channel (802.11b only)        |
 
 **2.4 GHz Channel Selection Guide**:
 - **Non-overlapping Channels (1, 6, 11)**: Recommended combination to minimize interference.

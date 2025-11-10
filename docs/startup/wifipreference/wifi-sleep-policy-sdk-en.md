@@ -9,10 +9,9 @@ Controls the Wi-Fi behavior when the screen is off (standby mode).
 
 ### Settings API
 
-| Action                                         | Purpose                            | Features                             |
-|------------------------------------------------|------------------------------------|--------------------------------------|
-| `com.android.server.startupservice.config`     | Change Wi-Fi Sleep Policy settings | Saved in JSON, persists after reboot |
-| `com.android.server.startupservice.config.fin` | Settings completion signal         | Apply all config settings at once    |
+| Action                                         | Purpose                            |
+|------------------------------------------------|------------------------------------|
+| `com.android.server.startupservice.config`     | Change Wi-Fi Sleep Policy settings |
 
 ---
 
@@ -84,4 +83,3 @@ adb shell am broadcast -a com.android.server.startupservice.config --es setting 
 ### Response Information
 
 - **Response Format**: No separate response broadcast.
-- **Application Time**: Within about 1-2 seconds after receiving the `config.fin` action.

@@ -9,10 +9,9 @@ Controls the notification feature for detecting unsecured Wi-Fi networks.
 
 ### Settings API
 
-| Action                                         | Purpose                                   | Features                             |
-|------------------------------------------------|-------------------------------------------|--------------------------------------|
-| `com.android.server.startupservice.config`     | Change Open Network Notification settings | Saved in JSON, persists after reboot |
-| `com.android.server.startupservice.config.fin` | Settings completion signal                | Apply all config settings at once    |
+| Action                                         | Purpose                                   |
+|------------------------------------------------|-------------------------------------------|
+| `com.android.server.startupservice.config`     | Change Open Network Notification settings |
 
 ---
 
@@ -74,5 +73,4 @@ adb shell am broadcast -a com.android.server.startupservice.config --es setting 
 ### Response Information
 
 - **Response Format**: No separate response broadcast.
-- **Application Time**: Within about 1-2 seconds after receiving the `config.fin` action.
 - **Notification Behavior**: Displays an "Open network available" notification in the system status bar.

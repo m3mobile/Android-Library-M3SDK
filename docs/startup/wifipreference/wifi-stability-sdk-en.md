@@ -10,10 +10,9 @@ Sets the stability level of the Wi-Fi connection. Controls the reconnection poli
 
 ### Settings API
 
-| Action                                         | Purpose                         | Features                             |
-|------------------------------------------------|---------------------------------|--------------------------------------|
-| `com.android.server.startupservice.config`     | Change Wi-Fi Stability settings | Saved in JSON, persists after reboot |
-| `com.android.server.startupservice.config.fin` | Settings completion signal      | Apply all config settings at once    |
+| Action                                         | Purpose                         |
+|------------------------------------------------|---------------------------------|
+| `com.android.server.startupservice.config`     | Change Wi-Fi Stability settings |
 
 ---
 
@@ -70,4 +69,3 @@ adb shell am broadcast -a com.android.server.startupservice.config --es setting 
 ### Response Information
 
 - **Response Format**: No separate response broadcast.
-- **Application Time**: Within about 1-2 seconds after receiving the `config.fin` action.

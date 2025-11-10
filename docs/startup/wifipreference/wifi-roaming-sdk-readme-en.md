@@ -41,10 +41,10 @@ context.sendBroadcast(intentDelta);
 
 #### Parameters
 
-| Parameter | Type   | Required | Description                                               |
-|-----------|--------|----------|-----------------------------------------------------------|
+| Parameter | Type   | Required | Description                                                                          |
+|-----------|--------|----------|--------------------------------------------------------------------------------------|
 | `setting` | String | Yes      | The type of roaming setting to change: `"wifi_roam_trigger"` or `"wifi_roam_delta"`. |
-| `value`   | int    | Yes      | The configuration value (integer index).                  |
+| `value`   | int    | Yes      | The configuration value (integer index).                                             |
 
 ---
 

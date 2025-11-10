@@ -9,10 +9,9 @@
 
 ### 설정 API
 
-| 액션                                             | 목적                       | 특징                  |
-|------------------------------------------------|--------------------------|---------------------|
-| `com.android.server.startupservice.config`     | Wi-Fi Sleep Policy 설정 변경 | JSON 저장, 재부팅 후에도 유지 |
-| `com.android.server.startupservice.config.fin` | 설정 완료 신호                 | 모든 config 설정 일괄 적용  |
+| 액션                                             | 목적                       |
+|------------------------------------------------|--------------------------|
+| `com.android.server.startupservice.config`     | Wi-Fi Sleep Policy 설정 변경 |
 
 ---
 
@@ -83,5 +82,4 @@ adb shell am broadcast -a com.android.server.startupservice.config --es setting 
 
 ### 응답 정보
 
-- **응답 형식**: 별도 응답 브로드캐스트 없음
-- **적용 시점**: `config.fin` 액션 수신 후 약 1-2초 이내
+- **응답 형식**: 별도 응답 브로드캐스트 없음1

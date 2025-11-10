@@ -41,6 +41,10 @@ These are the SDK documents related to device startup and system settings.
     * [Korean](./startup/volume/volume-settings-sdk-ko.md)
     * [English](./startup/volume/volume-settings-sdk-en.md)
 
+* **USB Setting SDK**: Guides on how to control USB settings.
+    * [Korean](startup/usb/usb-setting-sdk-ko.md)
+    * [English](startup/usb/usb-setting-sdk-en.md)
+
 ### Time Setting SDK
 
 These are the SDK documents related to time configuration.

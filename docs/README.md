@@ -2,6 +2,7 @@
 * [M3SDK Document List](#m3sdk-document-list)
   * [KeyTool SDK](#keytool-sdk)
   * [Startup SDK](#startup-sdk)
+    * [Application Management SDK](#application-management-sdk)
     * [Time Setting SDK](#time-setting-sdk)
     * [WiFi Preference SDK](#wifi-preference-sdk)
 <!-- TOC -->
@@ -44,6 +45,24 @@ These are the SDK documents related to device startup and system settings.
 * **USB Setting SDK**: Guides on how to control USB settings.
     * [Korean](startup/usb/usb-setting-sdk-ko.md)
     * [English](startup/usb/usb-setting-sdk-en.md)
+
+### Application Management SDK
+
+These are the SDK documents on how to manage installed applications, including installation,
+enabling/disabling, and runtime permission control.
+
+* **APK Installation SDK**: Guides on how to install APKs from local and URL sources.
+    * [Korean](./startup/app/apk-install-sdk-ko.md)
+    * [English](./startup/app/apk-install-sdk-en.md)
+
+* **App Enable/Disable SDK**: Guides on how to enable or disable installed applications.
+    * [Korean](./startup/app/app-enable-disable-sdk-ko.md)
+    * [English](./startup/app/app-enable-disable-sdk-en.md)
+
+* **Runtime Permission Control SDK**: Guides on how to grant or revoke runtime permissions for an
+  application.
+    * [Korean](./startup/app/runtime-permission-control-sdk-ko.md)
+    * [English](./startup/app/runtime-permission-control-sdk-en.md)
 
 ### Time Setting SDK
 
